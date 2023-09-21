@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý thư viện</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Quản lý thư viện</h1>
+    </header>
+    <main>
+        <section class="menu">
+            <ul>
+                <li><a href="danh-sach-sach.php">Danh sách sách</a></li>
+                <li><a href="mượn-trả-sách.php">Mượn trả sách</a></li>
+                <li><a href="thong-ke.php">Thống kê</a></li>
+            </ul>
+        </section>
+        <section class="content">
+            <?php
+            // Kiểm tra quyền truy cập
+            if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+                header('Location: login.php');
+            }
+
+            // Nội dung trang
+            ?>
+
+            <h2>Chào mừng bạn đến với quản lý thư viện!</h2>
+            <p>Trang này cho phép bạn quản lý các đầu sách, mượn trả sách và thống kê dữ liệu của thư viện.</p>
+            <p>Để bắt đầu, hãy chọn một mục trong menu bên trái.</p>
+        </section>
+    </main>
+    <footer>
+        Copyright &copy; 2023
+    </footer>
+</body>
+</html>
+Vui lòng thận trọng khi sử dụng mã. Tìm hiểu thêm
+style.css
+
+CSS
+body {
+    font-family: sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    width: 600px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 10px;
+}
+
+.menu {
+    float: left;
+    width: 200px;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    margin-bottom: 10px;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.content {
+    float: right;
+    width: 400px;
+}
+
+.content h2 {
+    font-size: 18px;
+}
+
+.content p {
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+}
