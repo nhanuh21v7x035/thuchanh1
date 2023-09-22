@@ -14,7 +14,7 @@
         <section class="menu">
             <ul>
                 <li><a href="danh-sach-sach.php">Danh sách sách</a></li>
-                <li><a href="mượn-trả-sách.php">Mượn trả sách</a></li>
+                <li><a href="muon-tra-sach.php">Mượn trả sách</a></li>
                 <li><a href="thong-ke.php">Thống kê</a></li>
             </ul>
         </section>
@@ -32,6 +32,7 @@
             <p>Trang này cho phép bạn quản lý các đầu sách, mượn trả sách và thống kê dữ liệu của thư viện.</p>
             <p>Để bắt đầu, hãy chọn một mục trong menu bên trái.</p>
         </section>
+        <div class="clearfix"></div>
     </main>
     <footer>
         Copyright &copy; 2023
@@ -48,6 +49,7 @@ body {
 
 header {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 main {
@@ -79,11 +81,18 @@ section {
     padding: 10px;
     text-decoration: none;
     color: #000;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    background-color: #ddd;
 }
 
 .content {
     float: right;
-    width: 400px;
+    width: 380px; /* Adjusted to account for padding */
 }
 
 .content h2 {
@@ -94,6 +103,13 @@ section {
     line-height: 1.5;
 }
 
-footer {
+.footer {
     text-align: center;
+    margin-top: 20px;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
 }
